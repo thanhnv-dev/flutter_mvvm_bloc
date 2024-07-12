@@ -1,0 +1,10 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "flutter_mvvm_bloc",
+      "request": "launch",
+      "type": "dart"
+    }
+  ]
+}
