@@ -52,16 +52,16 @@
 lib/
 ├── features/
 │   ├── home/
-│   │   ├── bloc/  // **ViewModel**
+│   │   ├── bloc/  // ViewModel
 │   │   │   ├── home_bloc.dart
 │   │   │   ├── home_event.dart
 │   │   │   ├── home_state.dart
-│   │   ├── data/  // **Model**
+│   │   ├── data/  // Model
 │   │   │   ├── models/  // Data Models
 │   │   │   │   ├── product_model.dart
 │   │   │   ├── repository/  // Repositories
 │   │   │   │   ├── home_repository.dart
-│   │   ├── views/  // **Views**
+│   │   ├── views/  // Views
 │   │   │   ├── home_screen.dart
 │   │   ├── widgets/  // Custom Widgets
 │   │   │   ├── custom_widget.dart
