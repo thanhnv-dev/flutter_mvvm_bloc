@@ -15,6 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         theme: ThemeData(
           useMaterial3: true,
+          colorScheme: const ColorScheme.highContrastLight().copyWith(
+            primary: Colors.blue.shade900,
+            outline: Colors.blue.shade900,
+          ),
         ),
         home: BlocProvider(
           create: (context) => HomeBloc(),

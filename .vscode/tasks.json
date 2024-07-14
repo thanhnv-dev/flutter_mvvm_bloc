@@ -1,0 +1,96 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build_runner",
+      "type": "shell",
+      "command": "chmod 755 ./scripts/build_runner.sh && ./scripts/build_runner.sh",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+
+    {
+      "label": "flutter - ios pod",
+      "type": "shell",
+      "command": "cd ios && pod install && cd ..",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "flutter - ios pod update",
+      "type": "shell",
+      "command": "cd ios && pod install --repo-update && cd ..",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "flutter - precache ios",
+      "type": "shell",
+      "command": "fvm flutter precache --ios",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "flutter - pub get",
+      "type": "shell",
+      "command": "fvm flutter pub get",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "flutter - clean",
+      "type": "shell",
+      "command": "fvm flutter clean",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "flutter - pub upgrade",
+      "type": "shell",
+      "command": "fvm flutter pub upgrade --major-versions",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    }
+  ]
+}

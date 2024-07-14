@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter_mvvm_bloc/features/home/data/models/product_response_model/result_product_response_model/product_model/product_model.dart';
 
 abstract class HomeState extends Equatable {
   const HomeState();
@@ -8,12 +9,7 @@ abstract class HomeState extends Equatable {
 }
 
 class HomeInitial extends HomeState {
-  final int counter;
-
-  const HomeInitial(this.counter);
-
-  @override
-  List<Object> get props => [counter];
+  const HomeInitial();
 }
 
 class ProductLoading extends HomeState {
@@ -21,7 +17,7 @@ class ProductLoading extends HomeState {
 }
 
 class ProductLoaded extends HomeState {
-  final ProductData productData;
+  final ProductModel productData;
   const ProductLoaded(this.productData);
 
   @override
@@ -34,8 +30,4 @@ class ProductError extends HomeState {
 
   @override
   List<Object> get props => [message];
-}
-
-class ProductData {
-  // Define the properties of ProductData here
 }
