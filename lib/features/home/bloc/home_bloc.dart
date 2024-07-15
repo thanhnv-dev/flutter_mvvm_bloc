@@ -16,8 +16,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       (event, emit) async {
         final HomeRepository homeRepository = HomeRepository();
 
-        emitSafety(const ProductLoading());
-
         final Either<Null, ProductModel> getProductRes = await homeRepository.getProduct(
           event.productId ?? productId,
           event.sku ?? sku,

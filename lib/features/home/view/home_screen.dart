@@ -36,7 +36,10 @@ class HomeScreenState extends State<HomeScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Column(
                       children: [
-                        ProductOption(productOptions: productData.productOptions),
+                        ProductOption(
+                          productOptions: productData.productOptions,
+                          parentContext: context,
+                        ),
                       ],
                     ),
                   )

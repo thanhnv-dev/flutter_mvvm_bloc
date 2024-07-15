@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_mvvm_bloc/core/network/dio_config.dart';
 import 'package:flutter_mvvm_bloc/core/network/network_client.dart';
 import 'package:flutter_mvvm_bloc/features/home/data/models/product_response_model/product_response_model.dart';
@@ -22,7 +23,7 @@ class HomeRepository {
       final productData = data.result.product;
       return Right(productData);
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       return const Left(null);
     }
   }
