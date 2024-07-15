@@ -26,7 +26,6 @@ class HomeScreenState extends State<HomeScreen> {
         builder: (context, state) {
           if (state is ProductLoaded) {
             final productData = state.productData;
-
             return SingleChildScrollView(
               child: Column(
                 children: [

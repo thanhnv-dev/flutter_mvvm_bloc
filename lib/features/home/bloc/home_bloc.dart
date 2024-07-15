@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_mvvm_bloc/core/utils/bloc_extention.dart';
 import 'package:flutter_mvvm_bloc/features/home/bloc/home_event.dart';
 import 'package:flutter_mvvm_bloc/features/home/bloc/home_state.dart';
 import 'package:flutter_mvvm_bloc/features/home/data/home_repository.dart';
@@ -15,7 +16,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       (event, emit) async {
         final HomeRepository homeRepository = HomeRepository();
 
-        emit(const ProductLoading());
+        emitSafety(const ProductLoading());
 
         final Either<Null, ProductModel> getProductRes = await homeRepository.getProduct(
           event.productId ?? productId,
@@ -25,9 +26,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         );
 
         getProductRes.fold((l) {
-          emit(const ProductError('Failed to fetch data'));
+          emitSafety(const ProductError('Failed to fetch data'));
         }, (r) {
-          emit(ProductLoaded(r));
+          emitSafety(ProductLoaded(r));
         });
       },
     );
