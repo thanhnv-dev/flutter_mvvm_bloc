@@ -28,22 +28,26 @@ class _ProductOptionState extends State<ProductOption> {
     final homeBloc = widget.parentContext.read<HomeBloc>();
     final sku = homeBloc.sku;
 
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: productOptionData.length,
-      itemBuilder: (BuildContext buildContext, int index) {
-        return Container(
-          margin: const EdgeInsets.only(top: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              OptionTitle(title: productOptionData[index]?.title.toUpperCase()),
-              OptionItem(optionItems: productOptionData[index]?.options, sku: sku, widget: widget),
-            ],
-          ),
-        );
-      },
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: ListView.builder(
+        padding: EdgeInsets.zero,
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: productOptionData.length,
+        itemBuilder: (BuildContext buildContext, int index) {
+          return Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                OptionTitle(title: productOptionData[index]?.title.toUpperCase()),
+                OptionItem(optionItems: productOptionData[index]?.options, sku: sku, widget: widget),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }

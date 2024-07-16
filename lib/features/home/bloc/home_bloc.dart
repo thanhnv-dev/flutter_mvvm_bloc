@@ -11,6 +11,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   String productId = "535038";
   String location = "";
   String terminalCode = "phongvu";
+  bool isLoading = false;
   HomeBloc() : super(const HomeInitial()) {
     on<GetProductData>(
       (event, emit) async {

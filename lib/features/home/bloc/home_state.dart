@@ -12,6 +12,10 @@ class HomeInitial extends HomeState {
   const HomeInitial();
 }
 
+class ProductLoading extends HomeState {
+  const ProductLoading();
+}
+
 class ProductLoaded extends HomeState {
   final ProductModel productData;
   const ProductLoaded(this.productData);

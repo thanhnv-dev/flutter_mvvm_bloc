@@ -40,7 +40,7 @@ class MyBottomSheet extends StatelessWidget {
                   ),
                 ),
               ),
-              onPressed: () => {},
+              onPressed: () {},
               child: const Text("Thêm vào giỏ"),
             ),
           ),

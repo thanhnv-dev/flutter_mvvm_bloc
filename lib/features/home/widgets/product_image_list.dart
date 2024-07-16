@@ -3,16 +3,16 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mvvm_bloc/features/home/data/models/product_response_model/result_product_response_model/product_model/product_detail_model/image_model/image_model.dart';
 
-class ImageList extends StatefulWidget {
-  const ImageList({super.key, required this.images});
+class ProductImageList extends StatefulWidget {
+  const ProductImageList({super.key, required this.images});
 
   final List<ImageModel> images;
 
   @override
-  ImageListState createState() => ImageListState();
+  ProductImageListState createState() => ProductImageListState();
 }
 
-class ImageListState extends State<ImageList> {
+class ProductImageListState extends State<ProductImageList> {
   int currentImageIndex = 1;
   @override
   Widget build(BuildContext context) {
@@ -33,11 +33,11 @@ class ImageListState extends State<ImageList> {
             itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) {
               return CachedNetworkImage(
                 imageUrl: widget.images[itemIndex].url,
-                placeholder: (context, url) => const Center(
-                  child: CircularProgressIndicator(
-                    strokeWidth: 1,
-                  ),
-                ),
+                // placeholder: (context, url) => const Center(
+                //   child: CircularProgressIndicator(
+                //     strokeWidth: 1,
+                //   ),
+                // ),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               );
             },
