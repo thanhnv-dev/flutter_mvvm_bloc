@@ -4,7 +4,10 @@ class MyBottomSheet extends StatelessWidget {
   const MyBottomSheet({
     super.key,
     required this.parentContext,
+    this.onAddPressed,
   });
+
+  final void Function()? onAddPressed;
 
   final BuildContext parentContext;
 
@@ -40,7 +43,7 @@ class MyBottomSheet extends StatelessWidget {
                   ),
                 ),
               ),
-              onPressed: () {},
+              onPressed: onAddPressed,
               child: const Text("Thêm vào giỏ"),
             ),
           ),
@@ -57,7 +60,7 @@ class MyBottomSheet extends StatelessWidget {
                   ),
                 ),
               ),
-              onPressed: () => {},
+              onPressed: () {},
               child: const Text("Mua ngay"),
             ),
           ),
